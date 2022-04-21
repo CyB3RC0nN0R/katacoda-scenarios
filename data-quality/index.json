@@ -6,8 +6,8 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
-        "text": "step1.md"
+        "title": "Was ist Datenqualität?",
+        "text": "01-what-is-data-quality.md"
       },
       {
         "title": "Step 2",
