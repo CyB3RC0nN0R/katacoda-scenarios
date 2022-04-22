@@ -1,7 +1,4 @@
-In diesem Praxisbeispiel lesen wir mithilfe der Python-Bibliothek Pandas Fahrzeugdaten ein, die in einer CSV-Datei vorliegen und untersuchen diese anschließend auf einen bestimmten Qualitätsmangel, nämlich fehlende Merkmale in den einzelnen Datenpunkten.
-
-Um die Analyse auf unvollständige Werte durchzuführen, wird die Python-Bibliothek [Pandas](https://pandas.pydata.org) eingesetzt.
-Dieses ist in Katacoda bereits installiert.
+In diesem Praxisbeispiel lesen wir mithilfe der Python-Bibliothek [Pandas](https://pandas.pydata.org) Fahrzeugdaten ein, die in einer CSV-Datei vorliegen und untersuchen diese anschließend auf einen bestimmten Qualitätsmangel, nämlich fehlende Merkmale in den einzelnen Datenpunkten.
 
 # Rohdaten betrachten
 
@@ -13,13 +10,13 @@ In einem echten Projekt sind mächtigere Werkzeuge, beispielsweise ein Jupyter N
 Nun verfassen wir ein kleines Python-Skript, das den Fahrzeugdatensatz als CSV einliest, und ihn anschließend in zwei CSV-Dateien mit vollständigen bzw. fehlenden Datenpunkten unterteilt.
 
 Zunächst wird die Pandas-Bibliothek importiert.
-Wie dabei üblich, definieren wir für Pandas das Kürzen `pd`, um später darauf zuzugreifen.
+Wie dabei üblich, definieren wir für Pandas das Kürzel `pd`, um später darauf zuzugreifen.
 
 <pre class="file" data-filename="split.py" data-target="append">
 import pandas as pd
 </pre>
 
-Als nächstes wird die CSV-Datei mir den Rohdatan `vehicles.csv` in ein Pandas Dataframe eingelesen.
+Als nächstes wird die CSV-Datei mir den Rohdaten aus `vehicles.csv` in ein Pandas Dataframe eingelesen.
 Dabei handelt es sich um eine tabellarische Datenstruktur, die den Inhalt der CSV-Datei abbilden kann.
 Sie definiert eine Vielzahl hilfreicher Funktionen, um die Daten zu untersuchen und zu manipulieren.
 
@@ -59,4 +56,4 @@ Diese betrachten wir nun einzeln:
 
 `cat vehicles_incomplete.csv`{{execute T1}}
 
-Wir in der Konsole zu sehen, wurden die unvollständigen Daten von den vollständigen getrennt, und können separat weiterverarbeitet werden, beispielsweise durch Weitergabe an die Fachabteilung.
+Wie in der Konsole zu sehen, wurden die unvollständigen Daten von den vollständigen getrennt, und können separat weiterverarbeitet werden, beispielsweise durch Weitergabe an die Fachabteilung.
