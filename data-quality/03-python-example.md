@@ -1,30 +1,48 @@
 In diesem Praxisbeispiel lesen wir mithilfe der Python-Bibliothek Pandas Fahrzeugdaten ein, die in einer CSV-Datei vorliegen und untersuchen diese anschließend auf einen bestimmten Qualitätsmangel, nämlich fehlende Merkmale in den einzelnen Datenpunkten.
 
-# Pandas installieren
+Um die Analyse auf unvollständige Werte durchzuführen, wird die Python-Bibliothek [Pandas](https://pandas.pydata.org) eingesetzt.
+Dieses ist in Katacoda bereits installiert.
 
-Um die Analyse auf unvollständige Werte durchzuführen, wird die Python-Bibliothek [Pandas](pandas.pydata.org) eingesetzt.
-Diese kann wie folgt installiert werden:
-`python3 -m pip install pandas`{{execute T1}}
+# Rohdaten betrachten
+
+Da es sich um einen sehr kleinen Datensatz handelt, lässt sich dieser direkt in der Konsole mit `cat vehicles.csv`{{execute T1}} betrachten.
+In einem echten Projekt sind mächtigere Werkzeuge, beispielsweise ein Jupyter Notebook, hilfreich.
 
 # Trennungs-Skript schreiben
 
 Nun verfassen wir ein kleines Python-Skript, das den Fahrzeugdatensatz als CSV einliest, und ihn anschließend in zwei CSV-Dateien mit vollständigen bzw. fehlenden Datenpunkten unterteilt.
 
+Zunächst wird die Pandas-Bibliothek importiert.
+Wie dabei üblich, definieren wir für Pandas das Kürzen `pd`, um später darauf zuzugreifen.
+
 <pre class="file" data-filename="split.py" data-target="append">
 import pandas as pd
 </pre>
+
+Als nächstes wird die CSV-Datei mir den Rohdatan `vehicles.csv` in ein Pandas Dataframe eingelesen.
+Dabei handelt es sich um eine tabellarische Datenstruktur, die den Inhalt der CSV-Datei abbilden kann.
+Sie definiert eine Vielzahl hilfreicher Funktionen, um die Daten zu untersuchen und zu manipulieren.
 
 <pre class="file" data-filename="split.py" data-target="append">
 data = pd.read_csv('vehicles.csv')
 </pre>
 
+Aus dem nun eingelesenen Datensatz können wir die vollständigen Reihen abspalten.
+Dies wird mit der Funktion `dropna` des Dataframes erzielt, welches unvollständige Reihen entfernet.
+Das ursprüngliche Dataframe bleibt dabei erhalten, denn es wird eine Kopie mit dem Ergebnis angelegt.
+
 <pre class="file" data-filename="split.py" data-target="append">
 data_complete = data.dropna()
 </pre>
 
+Ähnlich verfahren wir mit den unvollständigen Daten.
+Dazu muss erst mit der Funktion `isna` selektiert werden, welche Reihen unvollständig sind, um dann ein neues Dataframe mit eben diesen Reihen zu erstellen.
+
 <pre class="file" data-filename="split.py" data-target="append">
 data_incomplete = data[data.isna().any(axis=1)]
 </pre>
+
+Die zwei so gewonnenen Dataframes werden nun in jeweils eine CSV-Datei exportiert.
 
 <pre class="file" data-filename="split.py" data-target="append">
 data_complete.to_csv('vehicles_complete.csv')
