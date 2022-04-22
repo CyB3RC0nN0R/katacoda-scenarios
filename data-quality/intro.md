@@ -9,7 +9,7 @@ Zur praktischen Veranschaulichung wird ein Fahrzeugdatensatz mit Python auf Män
 * Was ist Datenqualität?
 * In welchem Umfeld ist Datenqualität von Bedeutung?
 * Typische Qualitätsmängel und Möglichkeiten zu deren Behebung
-* Praxisbeispiel: Qualitätsanalyse von Fahrzeugdaten mit Python
+* Praxisbeispiel: Bereinigung von Fahrzeugdaten mit Python
 
 # Voraussetzungen
 

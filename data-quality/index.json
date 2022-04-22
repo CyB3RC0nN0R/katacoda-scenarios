@@ -2,7 +2,7 @@
   "title": "Datenqualität",
   "description": "Eine Einführung zum Verständnis und zur Sicherung von Datenqualität mit Python.",
   "difficulty": "Beginner",
-  "time": "20 minutes",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
@@ -14,12 +14,8 @@
         "text": "02-improve-data-quality.md"
       },
       {
-        "title": "Step 3",
-        "text": "step3.md"
-      },
-      {
-        "title": "Step 4",
-        "text": "step4.md"
+        "title": "Praktisches Beispiel mit Python",
+        "text": "03-python-example.md"
       }
     ],
     "intro": {
@@ -27,6 +23,14 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "client": [
+        {
+          "file": "vehicles.csv",
+          "target": "~/"
+        }
+      ]
     }
   },
   "environment": {
